@@ -1,0 +1,19 @@
+# --- Obsidian ---
+# Configuración local de la interfaz (posición de paneles, archivos abiertos, etc.)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Caché y almacenamiento interno de plugins
+.obsidian/plugins/**/data.json
+# Si prefieres no sincronizar ningún ajuste de plugins (no recomendado si quieres la misma config en todos lados):
+# .obsidian/plugins/
+
+# Diccionarios personales o archivos de caché de IndexedDB
+.obsidian/indexedDB/
+
+# --- Sistema Operativo ---
+.DS_Store
+Thumbs.db
+
+# --- Archivos temporales de edición ---
+*.tmp
