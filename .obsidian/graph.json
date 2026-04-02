@@ -1,0 +1,30 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "tag:#LaParty  ",
+      "color": {
+        "a": 1,
+        "rgb": 13652704
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": -0.2,
+  "nodeSizeMultiplier": 1.32819010416667,
+  "lineSizeMultiplier": 1.6468017578125,
+  "collapse-forces": false,
+  "centerStrength": 0.379638671875,
+  "repelStrength": 12.7229817708333,
+  "linkStrength": 1,
+  "linkDistance": 94,
+  "scale": 0.7023319615912214,
+  "close": true
+}
