@@ -12,6 +12,6 @@ Fue mantenido como una "curiosidad viva" durante ocho meses por un gigante joven
     
 - **Conocimiento del Enemigo**: Habla el idioma **[[Gigante]]** y comprende su cultura tras haber vivido encadenado en sus cuevas heladas.
     
-- **Desertor por Hastío**: Aunque cumplió su contrato, su salida de la legión fue motivada por un profundo rechazo moral a sus líderes.
+- **Desertor por Hastío**: Aunque cumplió su contrato, su salida de la legión fue motivada por un profundo rechazo moral a sus líderes y los custodios no toman de buena manera a los traidores sin importar las razones para desertar.
     
 - **Cicatrices de Supervivencia**: Lleva marcas físicas del frío extremo y del acero que definen su resistencia actual.
