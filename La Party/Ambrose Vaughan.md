@@ -5,11 +5,13 @@ Ambrose era el médico de la aristocrática familia Dyson, conocido tanto por su
 
 Buscando ese mismo estado, Ambrose se autolesionó con un clavo en el ojo para destruir el bloqueo de su lóbulo frontal. En el umbral de la muerte, pactó con [[Pan]]: el dios levantaría su cadáver y le otorgaría conocimiento arcano a cambio de su propio saber médico. Ambrose se levantó con un cuerpo que ya no es humano, poseyendo ojos y una voz que pertenecen a una entidad externa.
 
+Ahora sufre de amnesia por lo que todos su conocimientos de medicina han sido olvidados.
+
 ### Puntos Importantes
 
 - **Naturaleza No-Muerta**: Su cuerpo es un cadáver reanimado por magia arcana, lo que lo separa biológicamente de los mortales.
-    
-- **Cirujano Obsesionado**: Mantiene su pericia médica y quirúrgica, pero ahora enfocada en la anatomía arcana y el cerebro.
+
+* **Amnesico** 
     
 - **El Pacto con Pan**: Su poder proviene de una deidad antigua que reclama su conocimiento a cambio de su existencia.
     

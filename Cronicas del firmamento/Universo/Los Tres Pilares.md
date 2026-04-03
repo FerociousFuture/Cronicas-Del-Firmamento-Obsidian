@@ -6,7 +6,9 @@ Entes independientes a los planes de Elena Siegman y el renacimiento del Rey.
 
 * ## [[Malphas]], el carcelero de memorias.
 
-* ## [[Vespera]], consejera de la corte del rey tirano.\
+* ## [[Vespera]], consejera de la corte del rey tirano.
+
+
 
 
 
