@@ -13,6 +13,13 @@
         "a": 1,
         "rgb": 13652704
       }
+    },
+    {
+      "query": "tag:#CustodiosDeLaCicatriz  ",
+      "color": {
+        "a": 1,
+        "rgb": 15074598
+      }
     }
   ],
   "collapse-display": true,
@@ -22,9 +29,9 @@
   "lineSizeMultiplier": 1.6468017578125,
   "collapse-forces": false,
   "centerStrength": 0.379638671875,
-  "repelStrength": 12.7229817708333,
-  "linkStrength": 1,
+  "repelStrength": 9.47265625,
+  "linkStrength": 0.625651041666667,
   "linkDistance": 94,
-  "scale": 0.7023319615912214,
+  "scale": 1.2902662019598634,
   "close": true
 }

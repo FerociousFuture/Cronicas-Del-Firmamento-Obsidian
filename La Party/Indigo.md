@@ -14,4 +14,4 @@ Después de ser atacado por sus propios familiares y rescatado por [[Shifuyagi]]
     
 - **Mentoría de Shifuyagi**: El bardo felino le enseñó que el coraje para proteger el talento es lo que define a un verdadero artista.
     
-- **Hacha de Malabares**: Utiliza un [[Hacha de Mano]] tanto para defenderse como para realizar espectáculos electrizantes.
+- **Hacha de Malabares**: Utiliza un Hacha de Mano tanto para defenderse como para realizar espectáculos electrizantes.
