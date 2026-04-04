@@ -1,4 +1,4 @@
-#CustodiosDeLaCicatriz 
+#FaccionesEnemigas
 
 _Humanoide Mediano (Cualquier alineamiento), Nivel de Desafío 1/2 (100 PX)_
 

@@ -1,10 +1,11 @@
+#Antagonistas
 ## [[Elena Siegman]]: La Matriarca del Gobierno de Sangre
 
 ### **Trasfondo: El Hambre de Perfección**
 
 Elena fue una aristócrata que, tras siglos de esterilidad vampírica, desarrolló una obsesión enfermiza por la creación de vida. Su "hija" **[[Pandora]]** fue el resultado de experimentos atroces donde reciclaba partes de mujeres y doncellas. Tras ser liberada de la **[[Tumba de las Sombras]]**, su prioridad no es el fin del mundo, sino reconstruir su "familia" y su imperio desde los cimientos.
 
-### **Estrategia del [[Gobierno de Sangre]]: El Control de los Caminos**
+### **Estrategia del [[Gobierno De Sangre]]: El Control de los Caminos**
 
 Para el nivel 1-4, Elena no envía ejércitos, sino que utiliza bandidos, sectarios y a los propios **[[Los Custodios de la Cicatriz]]** para asfixiar las rutas comerciales del mapa.
 
@@ -21,7 +22,7 @@ Elena necesita cuerpos y "esencia" para sus experimentos de vida artificial.
 
 Para evitar que las noticias de su despertar lleguen a las grandes ciudades como **[[Calimport]]**, ha ordenado bloquear los caminos principales.
 
-- **Consecuencia de Bajo Nivel:** Cobro de "peajes de sangre" por parte de mercenarios. Los suministros médicos y de equipo no llegan a los pueblos, lo que genera hambre y desesperación, facilitando que el **[[Gobierno de Sangre]]** se presente después como "salvadores" que traen comida a cambio de lealtad.
+- **Consecuencia de Bajo Nivel:** Cobro de "peajes de sangre" por parte de mercenarios. Los suministros médicos y de equipo no llegan a los pueblos, lo que genera hambre y desesperación, facilitando que el **[[Gobierno De Sangre]]** se presente después como "salvadores" que traen comida a cambio de lealtad.
     
 - **Nodo relacionado:** **[[Rutas de la Cicatriz]]**.
     

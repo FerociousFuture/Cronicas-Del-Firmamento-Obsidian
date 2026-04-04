@@ -2,9 +2,9 @@
 
 ### Resumen de Trasfondo
 
-Nacido en el [[Valle de Dracotinez]], Indigo creció en una familia de agricultores de naranjas que mantenía una prohibición absoluta sobre la música, culpando al tatarabuelo [[Drachalino]] de traer desgracia al linaje. Tras un encuentro fortuito con el bardo felino [[Shifuyagi]], Indigo descubrió su conexión con el rayo y el arte. Su bisabuela [[Dracoco]] le entregó en secreto el ukelele de madera de naranjo de sus ancestros, permitiéndole practicar oculto en los huertos.
+Nacido en el [[Valle de Dracotinez]], Indigo creció en una familia de agricultores de naranjas que mantenía una prohibición absoluta sobre la música, culpando al tatarabuelo Drachalino de traer desgracia al linaje. Tras un encuentro fortuito con el bardo felino Shifuyagi, Indigo descubrió su conexión con el rayo y el arte. Su bisabuela Dracoco le entregó en secreto el ukelele de madera de naranjo de sus ancestros, permitiéndole practicar oculto en los huertos.
 
-Después de ser atacado por sus propios familiares y rescatado por [[Shifuyagi]], Indigo abandonó su hogar para unirse al [[Circo de las Maravillas Eléctricas]]. Bajo la mentoría del bardo felino, aprendió que la música es un servicio para dar valor y consuelo. Actualmente viaja hacia el [[Colegio de Bardos]] para limpiar el nombre de su tatarabuelo y ser la sonrisa que ilumine los rincones oscuros del mundo.
+Después de ser atacado por sus propios familiares y rescatado por Shifuyagi, Indigo abandonó su hogar para unirse al [[Circo de las Maravillas Eléctricas]]. Bajo la mentoría del bardo felino, aprendió que la música es un servicio para dar valor y consuelo. Actualmente viaja hacia el [[Colegio de Bardos]] para limpiar el nombre de su tatarabuelo y ser la sonrisa que ilumine los rincones oscuros del mundo.
 
 ### Puntos Importantes
 

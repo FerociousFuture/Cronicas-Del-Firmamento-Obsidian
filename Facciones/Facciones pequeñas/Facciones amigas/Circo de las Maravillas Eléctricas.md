@@ -1,4 +1,4 @@
-#FaccionesMenores
+#FaccionesAmigas
 
 ### Resumen
 
@@ -19,4 +19,4 @@ Una compañía itinerante de artistas extraordinarios que viaja por el Firmament
 
 - **[[Indigo]]**: Antiguo miembro (músico y malabarista). Posee una carta de recomendación de la facción.
     
-- **Ubicación**: Es una facción nómada que se desplaza por las rutas del [[Firmamento]].
+- **Ubicación**: Es una facción nómada que se desplaza por las rutas del Firmamento.

@@ -13,4 +13,4 @@ Allí, su creador (cuya identidad es un misterio para ella) se apiadó de su exi
     
 - **Inteligencia Fragmentada**: Aunque originalmente poseía un potencial superior, el accidente la dejó con una capacidad mental promedio, recuperando su humanidad poco a poco.
     
-- **Instinto de Supervivencia**: Debido a su pasado como "bestia" en el bosque, posee rasgos de [[Bárbaro]] y [[Monje]], confiando en sus capacidades físicas naturales.
+- **Instinto de Supervivencia**: Debido a su pasado como "bestia" en el bosque, posee rasgos de Bárbaro y Monje, confiando en sus capacidades físicas naturales.

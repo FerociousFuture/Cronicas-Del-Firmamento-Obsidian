@@ -5,33 +5,18 @@
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": false,
-  "colorGroups": [
-    {
-      "query": "tag:#LaParty  ",
-      "color": {
-        "a": 1,
-        "rgb": 13652704
-      }
-    },
-    {
-      "query": "tag:#CustodiosDeLaCicatriz  ",
-      "color": {
-        "a": 1,
-        "rgb": 15074598
-      }
-    }
-  ],
+  "collapse-color-groups": true,
+  "colorGroups": [],
   "collapse-display": true,
   "showArrow": false,
-  "textFadeMultiplier": -0.2,
-  "nodeSizeMultiplier": 1.32819010416667,
-  "lineSizeMultiplier": 1.6468017578125,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
   "collapse-forces": false,
-  "centerStrength": 0.379638671875,
-  "repelStrength": 9.47265625,
-  "linkStrength": 0.625651041666667,
-  "linkDistance": 94,
-  "scale": 0.7023319615912209,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 0.7023319615912215,
   "close": true
 }
