@@ -3,111 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explorador: Crónicas del Firmamento</title>
+    <title>Wiki: Crónicas del Firmamento</title>
+    
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
-        body { font-family: -apple-system, sans-serif; display: flex; margin: 0; height: 100vh; background: #f6f8fa; color: #1f2328; }
-        #sidebar { width: 320px; border-right: 1px solid #d0d7de; overflow-y: auto; padding: 20px; background: #ffffff; flex-shrink: 0; }
-        #content { flex-grow: 1; overflow-y: auto; padding: 40px; background: #ffffff; }
-        .repo-title { font-size: 1.2rem; font-weight: bold; margin-bottom: 20px; color: #0969da; border-bottom: 2px solid #afb8c133; padding-bottom: 10px; }
-        .folder { font-weight: 600; cursor: pointer; margin-top: 10px; list-style: none; position: relative; }
-        .folder::before { content: '📁'; margin-right: 8px; }
-        .file { font-weight: 400; cursor: pointer; color: #0969da; margin: 4px 0 4px 20px; list-style: none; font-size: 0.95rem; }
-        .file::before { content: '📄'; margin-right: 8px; }
-        .file:hover { text-decoration: underline; }
-        .nested { display: block; padding-left: 10px; }
+        :root {
+            --wiki-blue: #0969da;
+            --sidebar-bg: #f8f9fa;
+            --border-color: #d0d7de;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: #ffffff;
+        }
+
+        /* Menú Lateral Estilo Wiki */
+        #sidebar {
+            width: 300px;
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+            background: #fff;
+        }
+
+        .sidebar-header h1 {
+            font-size: 1.2rem;
+            margin: 0;
+            color: #333;
+        }
+
+        #file-tree {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* Estilos del Árbol de Archivos */
+        ul { list-style: none; padding-left: 15px; margin: 5px 0; }
+        .folder { 
+            font-weight: bold; 
+            cursor: pointer; 
+            padding: 5px 0; 
+            display: block;
+            color: #24292f;
+        }
+        .folder:hover { color: var(--wiki-blue); }
+        .file-item { 
+            cursor: pointer; 
+            padding: 3px 8px; 
+            color: var(--wiki-blue);
+            border-radius: 4px;
+            display: block;
+        }
+        .file-item:hover { background-color: #ebf5ff; }
         .hidden { display: none; }
-        .loading-text { font-style: italic; color: #6e7781; }
+
+        /* Contenedor de Lectura */
+        #main-content {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 60px 10%;
+            background-color: #fff;
+        }
+
+        #reader-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .wiki-breadcrumb {
+            font-size: 0.8rem;
+            color: #6e7781;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        /* Animación de carga */
+        .loading { font-style: italic; color: #888; text-align: center; margin-top: 50px; }
     </style>
 </head>
 <body>
 
 <div id="sidebar">
-    <div class="repo-title">🌌 Crónicas del Firmamento</div>
-    <div id="tree-container"><span class="loading-text">Escaneando archivos del repositorio...</span></div>
+    <div class="sidebar-header">
+        <h1><i class="fas fa-book-atlas"></i> Crónicas Wiki</h1>
+    </div>
+    <div id="file-tree">
+        <div class="loading">Iniciando biblioteca...</div>
+    </div>
 </div>
 
-<div id="content">
-    <article id="markdown-viewer" class="markdown-body">
-        <h1>Bienvenido</h1>
-        <p>Selecciona una nota de la izquierda para desplegar la historia.</p>
-    </article>
+<div id="main-content">
+    <div id="reader-container">
+        <div id="breadcrumb" class="wiki-breadcrumb">Selecciona una crónica para empezar</div>
+        <article id="wiki-body" class="markdown-body">
+            <h1>Bienvenido a las Crónicas del Firmamento</h1>
+            <p>Usa el menú de la izquierda para navegar por el lore, las facciones y las hojas de personaje.</p>
+        </article>
+    </div>
 </div>
 
 <script>
-    // Configuración automática basada en tu usuario y repositorio
-    const CONFIG = {
+    const GITHUB_DATA = {
         owner: 'FerociousFuture',
         repo: 'cronicas-del-firmamento-obsidian',
-        branch: 'main' // Asegúrate de que sea 'main' o 'master'
+        branch: 'main'
     };
 
-    const treeContainer = document.getElementById('tree-container');
-    const viewer = document.getElementById('markdown-viewer');
+    // Configurar marked.js para que sea seguro
+    marked.setOptions({ gfm: true, breaks: true });
 
-    // Función para obtener archivos de la API de GitHub
-    async function getRepoContents(path = '') {
-        const url = `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${path}?ref=${CONFIG.branch}`;
+    async function fetchRepoData(path = '') {
+        const url = `https://api.github.com/repos/${GITHUB_DATA.owner}/${GITHUB_DATA.repo}/contents/${path}?ref=${GITHUB_DATA.branch}`;
         const response = await fetch(url);
         return await response.json();
     }
 
-    // Función para cargar y renderizar Markdown
-    async function loadFile(url) {
-        viewer.innerHTML = "<em>Cargando contenido...</em>";
+    async function loadMarkdownFile(fileUrl, fileName) {
+        const body = document.getElementById('wiki-body');
+        const breadcrumb = document.getElementById('breadcrumb');
+        
+        body.innerHTML = "<h2 class='loading'>Abriendo pergamino...</h2>";
+        breadcrumb.textContent = `Navegando en: ${fileName}`;
+
         try {
-            const res = await fetch(url);
-            const md = await res.text();
-            viewer.innerHTML = marked.parse(md);
-        } catch (err) {
-            viewer.innerHTML = "<strong>Error al cargar el archivo.</strong>";
+            const res = await fetch(fileUrl);
+            const text = await res.text();
+            body.innerHTML = marked.parse(text);
+            // Hacer scroll hacia arriba al cambiar de archivo
+            document.getElementById('main-content').scrollTop = 0;
+        } catch (e) {
+            body.innerHTML = "<h2>Error</h2><p>No se pudo cargar el archivo.</p>";
         }
     }
 
-    // Función recursiva para construir el árbol de archivos
-    async function buildTree(path, parentElement) {
-        const items = await getRepoContents(path);
+    async function renderTree(path, container) {
+        const items = await fetchRepoData(path);
         const ul = document.createElement('ul');
-        ul.className = 'nested';
 
         for (const item of items) {
-            // Ignorar archivos ocultos o de configuración de Obsidian
             if (item.name.startsWith('.') || item.name === 'index.html' || item.name === 'README.md') continue;
 
             const li = document.createElement('li');
-            
+
             if (item.type === 'dir') {
-                li.className = 'folder';
-                li.textContent = item.name;
-                li.onclick = async (e) => {
+                li.innerHTML = `<span class="folder"><i class="fas fa-folder"></i> ${item.name}</span>`;
+                const subContainer = document.createElement('div');
+                subContainer.className = 'hidden';
+                li.appendChild(subContainer);
+                
+                li.querySelector('.folder').onclick = async (e) => {
                     e.stopPropagation();
-                    const nextUl = li.querySelector('ul');
-                    if (nextUl) {
-                        nextUl.classList.toggle('hidden');
-                    } else {
-                        await buildTree(item.path, li);
+                    if (subContainer.innerHTML === "") {
+                        await renderTree(item.path, subContainer);
                     }
+                    subContainer.classList.toggle('hidden');
                 };
             } else if (item.name.endsWith('.md')) {
-                li.className = 'file';
-                li.textContent = item.name.replace('.md', '');
+                li.innerHTML = `<span class="file-item"><i class="far fa-file-alt"></i> ${item.name.replace('.md', '')}</span>`;
                 li.onclick = (e) => {
                     e.stopPropagation();
-                    loadFile(item.download_url);
+                    loadMarkdownFile(item.download_url, item.name);
                 };
-            } else {
-                continue; // No mostrar archivos que no sean .md
+            } else if (item.name.endsWith('.pdf')) {
+                li.innerHTML = `<a href="${item.html_url}" target="_blank" class="file-item"><i class="far fa-file-pdf"></i> ${item.name}</a>`;
             }
+
             ul.appendChild(li);
         }
-        parentElement.appendChild(ul);
+        container.appendChild(ul);
     }
 
-    // Iniciar la carga
-    buildTree('', treeContainer).then(() => {
-        const loading = treeContainer.querySelector('.loading-text');
-        if (loading) loading.remove();
+    // Arrancar la Wiki
+    const treeDiv = document.getElementById('file-tree');
+    renderTree('', treeDiv).then(() => {
+        treeDiv.querySelector('.loading').remove();
     });
 </script>
 
