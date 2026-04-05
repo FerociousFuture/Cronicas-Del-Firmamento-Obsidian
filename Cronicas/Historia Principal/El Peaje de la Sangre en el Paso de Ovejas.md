@@ -57,4 +57,4 @@ Su única opción sera
     
 - **Carteles de "Se Busca"**: Empezarán a aparecer descripciones la party en los tablones de anuncios de las aldeas cercanas.
     
-- **Vínculo Forzado**: La necesidad de escapar de una muerte segura ha forjado el primer lazo real entre los personajes; ahora sus destinos están atados por la persecución de **[Elena Siegman**.
+- **Vínculo Forzado**: La necesidad de escapar de una muerte segura ha forjado el primer lazo real entre los personajes; ahora sus destinos están atados por la persecución de los misterios alrededor de las cuotas de sangre.

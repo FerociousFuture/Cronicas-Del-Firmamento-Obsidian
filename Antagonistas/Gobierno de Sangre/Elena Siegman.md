@@ -14,9 +14,6 @@ Para el nivel 1-4, Elena no envía ejércitos, sino que utiliza bandidos, sectar
 Elena necesita cuerpos y "esencia" para sus experimentos de vida artificial.
 
 - **Consecuencia de Bajo Nivel:** Desapariciones constantes en aldeas pequeñas cerca de los bosques. Los jugadores encuentran carros volcados pero sin rastros de sangre, solo "listas de selección" con descripciones físicas de jóvenes desaparecidos.
-    
-- **Nodo relacionado:** **[[Secuestros de la Llama]]**.
-    
 
 #### **2. El Cierre de los Pasos de Montaña (Objetivo: Logística)**
 
