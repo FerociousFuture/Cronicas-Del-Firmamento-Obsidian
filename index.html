@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador: Crónicas del Firmamento</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+    <style>
+        body { font-family: -apple-system, sans-serif; display: flex; margin: 0; height: 100vh; background: #f6f8fa; color: #1f2328; }
+        #sidebar { width: 320px; border-right: 1px solid #d0d7de; overflow-y: auto; padding: 20px; background: #ffffff; flex-shrink: 0; }
+        #content { flex-grow: 1; overflow-y: auto; padding: 40px; background: #ffffff; }
+        .repo-title { font-size: 1.2rem; font-weight: bold; margin-bottom: 20px; color: #0969da; border-bottom: 2px solid #afb8c133; padding-bottom: 10px; }
+        .folder { font-weight: 600; cursor: pointer; margin-top: 10px; list-style: none; position: relative; }
+        .folder::before { content: '📁'; margin-right: 8px; }
+        .file { font-weight: 400; cursor: pointer; color: #0969da; margin: 4px 0 4px 20px; list-style: none; font-size: 0.95rem; }
+        .file::before { content: '📄'; margin-right: 8px; }
+        .file:hover { text-decoration: underline; }
+        .nested { display: block; padding-left: 10px; }
+        .hidden { display: none; }
+        .loading-text { font-style: italic; color: #6e7781; }
+    </style>
+</head>
+<body>
+
+<div id="sidebar">
+    <div class="repo-title">🌌 Crónicas del Firmamento</div>
+    <div id="tree-container"><span class="loading-text">Escaneando archivos del repositorio...</span></div>
+</div>
+
+<div id="content">
+    <article id="markdown-viewer" class="markdown-body">
+        <h1>Bienvenido</h1>
+        <p>Selecciona una nota de la izquierda para desplegar la historia.</p>
+    </article>
+</div>
+
+<script>
+    // Configuración automática basada en tu usuario y repositorio
+    const CONFIG = {
+        owner: 'FerociousFuture',
+        repo: 'cronicas-del-firmamento-obsidian',
+        branch: 'main' // Asegúrate de que sea 'main' o 'master'
+    };
+
+    const treeContainer = document.getElementById('tree-container');
+    const viewer = document.getElementById('markdown-viewer');
+
+    // Función para obtener archivos de la API de GitHub
+    async function getRepoContents(path = '') {
+        const url = `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${path}?ref=${CONFIG.branch}`;
+        const response = await fetch(url);
+        return await response.json();
+    }
+
+    // Función para cargar y renderizar Markdown
+    async function loadFile(url) {
+        viewer.innerHTML = "<em>Cargando contenido...</em>";
+        try {
+            const res = await fetch(url);
+            const md = await res.text();
+            viewer.innerHTML = marked.parse(md);
+        } catch (err) {
+            viewer.innerHTML = "<strong>Error al cargar el archivo.</strong>";
+        }
+    }
+
+    // Función recursiva para construir el árbol de archivos
+    async function buildTree(path, parentElement) {
+        const items = await getRepoContents(path);
+        const ul = document.createElement('ul');
+        ul.className = 'nested';
+
+        for (const item of items) {
+            // Ignorar archivos ocultos o de configuración de Obsidian
+            if (item.name.startsWith('.') || item.name === 'index.html' || item.name === 'README.md') continue;
+
+            const li = document.createElement('li');
+            
+            if (item.type === 'dir') {
+                li.className = 'folder';
+                li.textContent = item.name;
+                li.onclick = async (e) => {
+                    e.stopPropagation();
+                    const nextUl = li.querySelector('ul');
+                    if (nextUl) {
+                        nextUl.classList.toggle('hidden');
+                    } else {
+                        await buildTree(item.path, li);
+                    }
+                };
+            } else if (item.name.endsWith('.md')) {
+                li.className = 'file';
+                li.textContent = item.name.replace('.md', '');
+                li.onclick = (e) => {
+                    e.stopPropagation();
+                    loadFile(item.download_url);
+                };
+            } else {
+                continue; // No mostrar archivos que no sean .md
+            }
+            ul.appendChild(li);
+        }
+        parentElement.appendChild(ul);
+    }
+
+    // Iniciar la carga
+    buildTree('', treeContainer).then(() => {
+        const loading = treeContainer.querySelector('.loading-text');
+        if (loading) loading.remove();
+    });
+</script>
+
+</body>
+</html>
